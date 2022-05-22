@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'general/main.css' %}"> 
+    <title>Coral</title>
+</head>
+<body>
+    <div class="nav" id="navbar">
+    <ul class="navlist">
+        <li class="nav-link"><a href="/" class="nav-text">Home</a></li>
+        <li class="nav-link"><a href="/interface"  class="nav-text">Web Interface</a></li>
+        <li class="nav-link"><a href="#"  class="nav-text">Shrimp</a></li>
+        <li class="nav-link"><a href="https://colab.research.google.com/drive/1mzKTLN6L9jvNY_-COSueT-FR-0oG5EV3?usp=sharing" class="nav-text">Source code</a></li>
+        </ul> 
+    </div>
+  <div class="header">
+    <h1>Coral - Tritonhacks 2022</h1>
+    <div class="row content">
+        <p class="description">Coral is the flagship project of the tritonhacks 2022 submission by Siddarth Calidas, Sean Boerhout, Ayush Nayak and Vignesh Nydhruva</p> 
+        <p style="color: white; text-align: center; font-weight: bold; padding-bottom: 15%;">Predict Illegal Fishing Operations with up to 92% accuracy</p> 
+        <div class="launch-button">
+            <a class="launchlink" href="/interface">Launch the Coral web interface</a>
+        </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <h2 class="problem">The problem: Illegal Fishing</h2>
+    <p class="paragraphdescription">Illegal fishing is a serious economic and environmental problem. Although satellite
+        data exists to track unregistered vessels, the technology does not yet exist to
+        identify potential illegal fishing candidates. Coral uses machine learning to predict
+        vessels that are engaging in illegal fishing, so that coastal authorities can 
+        intervene and stop their operation
+    </p>
+  
+
+    <h3 style="font-size: 32px; font-family: 'Raleway', sans-serif;">Statistics about Illegal Fishing</h3>
+    <ul>
+      <li class="stat" style="font-size: 24px;">1 in every 5 fish was caught through illegal fishing methods</li>
+      <li class="stat" style="font-size: 24px;">Up to 32% of seafood imports in the US come from illegal fishing</li>
+      <li class="stat" style="font-size: 24px;">Illegal fishing causes losses of up to 36.4 billion dollars annually</li>
+      <li class="stat" style="font-size: 24px;">Illegal fishing vessels often assist with other criminal activities such as wildlife smuggling, drug trafficking and human abuse</li>
+    </ul>
+
+    <img src="{% static 'general/illegalfishing.jpg' %}" class="center-image">
+
+    <h3 style="font-size: 32px; font-family: 'Raleway', sans-serif;">Our Solution</h3>
+    <p class="paragraphdescription">
+      Coral is a software that uses machine learning to predict potential illegal fishing operations to 92% accuracy. In 
+      short, we use satellite data about unidentified vessels to predict if they are illegally fishing. Satellite data such as 
+      <a href="https://www.pewtrusts.org/en/research-and-analysis/articles/2016/03/03/how-satellite-monitoring-is-helping-catch-bad-actors">
+      Pew trusts' Project of the seas</a> provides information about any vessels speed, course and position. Now, if an
+      agency spots a suspicious boat using that satellite data, they need to know if it is a candidate for illegal fishing. They can
+      input that data into our interface and get a reliable prediction about whether that boat is illegal, and if they should
+      intervene. 
+    </p>
+
+    <img src="{% static 'general/arrest.jpg' %}" class="center-image">
+
+    <h3 style="font-size: 32px; font-family: 'Raleway', sans-serif;">Technical Description</h3>
+    <p class="paragraphdescription">
+      Coral uses a machine learning model trained on over 4000 accurate data entries. We sourced our training and evaluation
+      data from <a href="https://globalfishingwatch.org/">https://globalfishingwatch.org/</a>, which had datasets containing
+      historical satellite data about fishing vessels. We then used TensorFlow, a Python machine learning library by google
+      to build a model that would work on our dataset. We determined that the best kind of model would be a LinearClassifier
+      estimator which came prepackaged throught the tensorflow.estimator module. We constructed and trained this model, and then
+      exported it as a SavedModel. Now, the python backend of this website has access to that model binary and can run predictions
+      on it by constructing a 6 by 1 input tensor from your input and passing that into the compiled model. It returns a dictionary
+      of tensors that represents the prediction.
+    </p>
+
+    <img src="{% static 'general/tf.png' %}" class="center-image">
+
+  </div>
+  <div class="footer">
+      <p style="text-align: center;">Coral 2022</p>
+  </div>
+
+  <script>
+    // When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+  </script>
+</body>
+</html>

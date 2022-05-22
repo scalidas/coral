@@ -1,0 +1,129 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 64px;
+    padding-bottom: 0%;
+}
+
+.description {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+  
+.header {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    background: url(sea.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+.header .row.content {
+    flex: 1 1 auto;
+}
+
+.main {
+    padding: 2%;
+}
+
+.problem {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 48px;
+}
+
+.footer {
+    border-top: 5px solid black;
+}
+
+.paragraphdescription {
+    font-size: 24px;
+}
+
+.launch-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+    padding-bottom: 5%;
+}
+
+.launchlink {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bolder;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.nav {
+    background-color: white;
+}
+
+.nav-text {
+    text-decoration: none;
+}
+
+a:link {
+    color: blue;
+  }
+  
+/* visited link */
+a:visited {
+color: blue;
+}
+
+/* mouse over link */
+a:hover {
+color: black;
+}
+
+/* selected link */
+a:active {
+color: black;
+}
+
+.navlist {
+    margin: 10px;
+    padding: 0;
+}
+.nav-link {
+    padding: 20px;
+    text-decoration: none;
+    display: inline;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }

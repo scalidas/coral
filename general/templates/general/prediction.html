@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">`
+    <link rel="stylesheet" href="{% static 'general/main.css' %}"> 
+    <title>Coral Interface</title>
+</head>
+<body>
+    <div class="nav" id="navbar">
+        <ul class="navlist">
+        <li class="nav-link"><a href="/" class="nav-text">Home</a></li>
+        <li class="nav-link"><a href="/interface"  class="nav-text">Web Interface</a></li>
+        <li class="nav-link"><a href="#"  class="nav-text">Shrimp</a></li>
+        <li class="nav-link"><a href="https://colab.research.google.com/drive/1mzKTLN6L9jvNY_-COSueT-FR-0oG5EV3?usp=sharing" class="nav-text">Source code</a></li>
+        </ul> 
+    </div>
+  <div class="header">
+    <h1>Coral - Tritonhacks 2022</h1>
+    <div class="row content">
+        <p class="description">Coral is the tritonhacks 2022 submission by Siddarth Calidas, Sean Boerhout, Ayush Nayak and Vignesh Nydhruva</p> 
+    </div>
+  </div>
+
+  <div class="main">
+    <p>Prediction Output: {{prediction_number}}</p>
+    <p>Prediction Tensor: {{prediction_tensor}}</p>
+    <p>Raw Prediction: {{prediction_raw}}</p>
+
+  <div class="footer">
+      <p style="text-align: center;">Coral 2022</p>
+  </div>
+
+<script>
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+if (window.pageYOffset >= sticky) {
+navbar.classList.add("sticky")
+} else {
+navbar.classList.remove("sticky");
+}
+}
+</script>
+</body>
+</html>

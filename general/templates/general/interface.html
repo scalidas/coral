@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'general/main.css' %}"> 
+    <title>Coral Interface</title>
+</head>
+<body>
+    <div class="nav" id="navbar">
+        <ul class="navlist">
+        <li class="nav-link"><a href="/" class="nav-text">Home</a></li>
+        <li class="nav-link"><a href="/interface"  class="nav-text">Web Interface</a></li>
+        <li class="nav-link"><a href="#"  class="nav-text">Shrimp</a></li>
+        <li class="nav-link"><a href="https://colab.research.google.com/drive/1mzKTLN6L9jvNY_-COSueT-FR-0oG5EV3?usp=sharing" class="nav-text">Source code</a></li>
+        </ul> 
+    </div>
+  <div class="header">
+    <h1>Coral - Web Interface</h1>
+    <div class="row content">
+        <p class="description">This is the web interface to interact with Coral's machine learning model</p> 
+    </div>
+  </div>
+
+  <div class="main">
+    <h2>Enter your Data</h3>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Predict</button>
+      </form>
+    </div>
+
+    <div class="footer">
+        <p style="text-align: center;">Coral 2022</p>
+    </div>
+<script>
+    // When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+    } else {
+    navbar.classList.remove("sticky");
+    }
+}
+    </script>
+</body>
+</html>
