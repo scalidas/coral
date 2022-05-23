@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-vt5z&^tm)^n02__a)f1sj#si2u6=!&erkc@%a5zokm3nouospv'
+SECRET_KEY = 'vt5z&^tm)^n02__a)f1sj#si2u6=!&erkc@%a5zokm3nouospv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -69,18 +69,17 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [
+    "general/static/general",
+]
+
 WSGI_APPLICATION = 'coral.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DATABASES = {}
 
 
 # Password validation
@@ -120,6 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = ''
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
