@@ -1,8 +1,7 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 import tensorflow as tf
-from coral.settings import BASE_DIR
 import os
+from pathlib import Path
 from .forms import InputForm
 # Create your views here.
 
@@ -12,7 +11,7 @@ def index(request):
 
 #ml interface
 def interface(request):
-    imported = tf.saved_model.load(os.path.join(BASE_DIR, r"general\tf_models\1653176436"))
+    imported = tf.saved_model.load(os.path.join(Path(__file__).resolve().parent.parent, r'general/tf_models/1653176436'))
 
     if request.method=='POST':
         form = InputForm(request.POST, request.FILES)
