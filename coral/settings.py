@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://agile-shelf-71321.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = ['https://*.herokuapp.com',]
 
 ROOT_URLCONF = 'coral.urls'
 
